@@ -1,3 +1,4 @@
+// Twimple provies a simple way to run tween functions in Javascript.
 class Twimple {
   // Lerp through values start through end by indicating how far with percent.
   static lerp(start, end, percent)
@@ -6,7 +7,7 @@ class Twimple {
   }
 
   // Lerp on intervals.
-  static tween(start, end, duration, interval, ontick) {
+  static tween(start, end, duration, interval, ontick, method=Twimple.lerp) {
     // Initialize our elapsed time to zero.
     let elapsedTime = 0;
 
@@ -23,7 +24,7 @@ class Twimple {
       for(var key in start) {
         if(start.hasOwnProperty(key)) {
         // Store the lerp value.
-          result[key] = Twimple.lerp(start[key], end[key], percent)
+          result[key] = method(start[key], end[key], percent)
         }
       }
 

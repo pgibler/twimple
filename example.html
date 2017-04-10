@@ -24,7 +24,6 @@
 
         // Tween it till it's good.
         const intervalId = Twimple.tween(start, end, duration, tickInterval, values => {
-          console.log(values);
           document.getElementById('tweenValue1').value = parseInt(values.value1);
           document.getElementById('tweenValue2').value = parseInt(values.value2);
         });
